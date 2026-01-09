@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dracode — Finaliser la commande</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="templatemo-606-string-master.css">
+
+  <style>
+    :root { 
+      --bg-dark: #0d0d0d; 
+      --bg-card: rgba(20, 20, 20, 0.8); 
+      --accent: #f59e0b; 
+      --accent-light: #fbbf24; 
+      --text-primary: #fafafa; 
+      --text-secondary: #a3a3a3; 
+      --border: rgba(255, 255, 255, 0.1); 
+    }
+
+    body { 
+      font-family: 'Space Grotesk', sans-serif; 
+      background: var(--bg-dark); 
+      color: var(--text-primary); 
+      margin: 0; 
+      padding: 0;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                  url('images/plante-au-neon-entouree-formes-geometriques-abstraites-creees-ia-generative_124507-171054.avif') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .page-content {
+      padding: 120px 20px 60px;
+      display: flex; 
+      flex-direction: column;
+      align-items: center; 
+      min-height: 100vh;
+    }
+
+    .main-wrapper { 
+  display: grid; 
+  /* Garde tes colonnes telles quelles */
+  grid-template-columns: 1.1fr 0.9fr; 
+  gap: 30px; 
+  max-width: 1200px; 
+  width: 100%; 
+  
+  /* CHANGE CETTE LIGNE CI-DESSOUS */
+  align-items: center; /* Au lieu de flex-start */
+}
+    
+    .checkout, .brief-section { 
+      background: var(--bg-card); 
+      backdrop-filter: blur(15px); 
+      padding: 35px; 
+      border-radius: 24px; 
+      border: 1px solid var(--border); 
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
+    }
+
+    .section h3 { margin: 20px 0 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); }
+    
+    .plans label, .payments label, .check-label { 
+      display: flex; justify-content: space-between; align-items: center; 
+      background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); 
+      padding: 12px 18px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; transition: 0.3s; 
+    }
+
+    input[type="radio"] { display: none; }
+    input[type="radio"]:checked + label { border-color: var(--accent); background: rgba(245, 158, 11, 0.15); }
+    
+    input[type="email"], input[type="text"], textarea, select { 
+      width: 100%; padding: 14px; border-radius: 12px; 
+      background: rgba(0, 0, 0, 0.3); color: white; 
+      border: 1px solid var(--border); margin-top: 5px; box-sizing: border-box; 
+      font-family: inherit;
+    }
+
+    #pay-btn, .btn-submit-config { 
+      width: 100%; padding: 18px; border-radius: 12px; border: none; 
+      background: var(--accent); color: #000; font-size: 1.1rem; 
+      font-weight: 700; cursor: pointer; margin-top: 20px; transition: 0.3s; 
+    }
+
+    .btn-submit-config { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+    .btn-submit-config:hover { background: var(--accent); color: #000; }
+
+    .check-label { justify-content: flex-start; gap: 12px; font-size: 0.9rem; }
+    .check-label input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+    @media (max-width: 950px) { .main-wrapper { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="binary-823339_1280.png" alt="Dracode Logo" class="logo-img">
+        Dracode
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Service</a></li>
+        <li><a href="index.html#pricing">Tarif</a></li>
+        <li><a href="index.html#instructors">Promo crypto</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+      <a href="index.html#pricing" class="nav-cta"><span>Commander</span></a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="main-wrapper">
+      
+      <div class="checkout">
+        <h1>📜 Détails de la commande</h1>
+
+        <div class="section plans">
+          <h3>1. Formule</h3>
+          <input type="radio" id="basic" name="plan" value="Essentiel" checked>
+          <label for="basic"><span>Essentiel</span> <span>165 €</span></label>
+          <input type="radio" id="pro" name="plan" value="Business">
+          <label for="pro"><span>Business</span> <span>325 €</span></label>
+          <input type="radio" id="vip" name="plan" value="Premium">
+          <label for="vip"><span>Premium</span> <span>520 €</span></label>
+          
+          <h3 style="margin-top:20px;">Packs Spécialisés Crypto</h3>
+          <input type="radio" id="dyn" name="plan" value="Dynamics">
+          <label for="dyn"><span>Dynamics</span> <span>1 000 €</span></label>
+          <input type="radio" id="prs" name="plan" value="Prestige">
+          <label for="prs"><span>Prestige</span> <span>1 200 €</span></label>
+          <input type="radio" id="ora" name="plan" value="Oracle">
+          <label for="ora"><span>Oracle</span> <span>2 500 €</span></label>
+        </div>
+
+        <div class="section">
+          <h3>2. Coordonnées</h3>
+          <input type="email" id="email" placeholder="Email professionnel" required>
+          <input type="text" id="biz-name" placeholder="Nom de votre projet" style="margin-top:10px;">
+        </div>
+
+        <div class="section payments">
+          <h3>3. Moyen de paiement</h3>
+          <input type="radio" id="card" name="payment" value="card" checked>
+          <label for="card">💳 Carte bancaire</label>
+          <input type="radio" id="crypto" name="payment" value="crypto">
+          <label for="crypto">🪙 Crypto-monnaie</label>
+        </div>
+
+        <button id="pay-btn" onclick="pay()">VALIDER ET PAYER</button>
+      </div>
+
+      <div class="brief-section">
+        <h2>🛠️ Configurateur de Projet</h2>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 25px;">Détails techniques pour le développement.</p>
+
+        <form action="https://formspree.io/f/xlgeawpp" method="POST">
+            <div class="section">
+                <h3>Options Web3</h3>
+                <label class="check-label"><input type="checkbox" name="FOMO"> Timer FOMO</label>
+                <label class="check-label"><input type="checkbox" name="BuyBot"> Setup BuyBot</label>
+                <label class="check-label"><input type="checkbox" name="TV"> Graphiques Live</label>
+                <label class="check-label"><input type="checkbox" name="Wallet"> Wallet Connect</label>
+            </div>
+
+            <div class="section">
+                <h3> 4 .Brief Créatif</h3>
+                <select name="Style">
+                    <option value="Degen">Styles modernes / tendance</option>
+                    <option value="Pro">Styles restaurants</option>
+                    <option value="Degen">Styles boutiques / commerces</option>
+                    <option value="Pro">Styles visuels forts</option>
+                </select>
+                <textarea name="Details" placeholder="Décrivez vos envies (nombre de page,les onglets, option...)" style="margin-top:10px;"></textarea>
+                <input type="text" name="Inspi" placeholder="Exemples de sites (URLs)" style="margin-top:10px;">
+            </div>
+
+            <input type="hidden" name="_subject" value="Nouveau Config Projet - Dracode">
+            <button type="submit" class="btn-submit-config">ENVOYER LE BRIEF TECHNIQUE</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    async function pay() {
+      const email = document.getElementById("email").value.trim();
+      const bizName = document.getElementById("biz-name").value.trim();
+      const plan = document.querySelector('input[name="plan"]:checked').value;
+      const payment = document.querySelector('input[name="payment"]:checked').value;
+      const btn = document.getElementById("pay-btn");
+
+      if (!email || !email.includes('@')) { alert("Email valide requis."); return; }
+      btn.disabled = true;
+      btn.innerText = "ENVOI DU BRIEF...";
+
+      try {
+        await fetch("https://formspree.io/f/xlgeawpp", {
+          method: "POST",
+          body: JSON.stringify({ Email: email, Projet: bizName, Formule: plan, Paiement: payment }),
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        });
+      } catch (e) { console.error(e); }
+
+      const stripeLinks = {
+        "Essentiel": "https://buy.stripe.com/cNi00ledLeY801L6cH9oc00",
+        "Business": "https://buy.stripe.com/4gM4gB2v317i3dXfNh9oc01",
+        "Premium": "https://buy.stripe.com/6oU9AV7Png2cg0JeJd9oc02",
+        "Dynamics": "TON_LIEN_1000",
+        "Prestige": "TON_LIEN_1200",
+        "Oracle": "TON_LIEN_2500"
+      };
+      
+      const cryptoLinks = {
+        "Essentiel": "https://commerce.coinbase.com/checkout/a01a7da6-bdca-47d9-b0d2-f78f1047ec91",
+        "Business": "https://commerce.coinbase.com/checkout/be451f09-7b84-4514-91eb-c245550dd9a4",
+        "Premium": "https://commerce.coinbase.com/checkout/9f55932f-8322-49f0-b2e1-83973e1e0783",
+        "Dynamics": "COINBASE_1000",
+        "Prestige": "COINBASE_1200",
+        "Oracle": "COINBASE_2500"
+      };
+
+      let finalUrl = (payment === "card") ? stripeLinks[plan] : cryptoLinks[plan];
+      window.location.href = finalUrl + (finalUrl.includes('?') ? '&' : '?') + "prefilled_email=" + encodeURIComponent(email);
+    }
+  </script>
+  <footer>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="images/lgo.drck.png" alt="Dracode" class="logo-img">
+          DRACODE
+        </a> </div>
+
+      <div>
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#instructors">Packs Crypto</a></li>
+          <li><a href="#testimonials">Avis</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Expertise</h4>
+        <ul class="footer-links">
+          <li><a href="#">Landing Pages</a></li>
+          <li><a href="#">Bots Trading</a></li>
+          <li><a href="#">Audit UI/UX</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 DRACODE. Tous droits réservés.</p>
+      <p>Propulsé par l'innovation Web3.</p>
+    </div>
+  </div>
+</footer>
+<script src="templatemo-606-string-scripts.js"></script>
+<script>
+      setInterval(() => {
+        document.querySelectorAll('.slider-track').forEach(slider => {
+          // Si on est à la fin du défilement (scroll), on revient au début
+          if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 10) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            // Sinon, on avance d'une largeur de carte
+            slider.scrollBy({ left: slider.offsetWidth, behavior: 'smooth' });
+          }
+        });
+      }, 3000); // 3000ms = 3 secondes entre chaque image
+    </script>
+
+  </body>
+</html>
+</body>
+</html>

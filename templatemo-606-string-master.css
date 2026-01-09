@@ -1,0 +1,1806 @@
+@charset "utf-8";
+/* CSS Document 
+
+TemplateMo 606 String Master
+
+https://templatemo.com/tm-606-string-master
+
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg-dark: #0d0d0d;
+	--bg-card: #1a1a1a;
+	--bg-elevated: #242424;
+	--accent: #f59e0b;
+	--accent-light: #fbbf24;
+	--accent-dark: #d97706;
+	--text-primary: #fafafa;
+	--text-secondary: #a3a3a3;
+	--text-muted: #737373;
+	--border: #2e2e2e;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Space Grotesk', sans-serif;
+	background: var(--bg-dark);
+	color: var(--text-primary);
+	line-height: 1.6;
+}
+
+
+/* ... (Garder le début du code identique jusqu'à Navigation) ... */
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #000000 !important; /* Noir total comme demandé */
+    border-bottom: none; 
+    padding: 1.2rem 0; /* Augmenté pour plus de présence */
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1400px; /* Élargi pour correspondre au Hero */
+    margin: 0 auto;
+    padding: 0 5%; /* Aligné sur le Hero */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO : On augmente la taille pour qu'il soit bien visible */
+.logo {
+    font-size: 1.8rem !important; /* Augmenté (était à 1.3) */
+    font-weight: 800;
+    color: #ffffff !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espace plus net */
+}
+
+.logo-img {
+    width: 110px !important;  /* Augmenté (était à 28px) */
+    height: 110px !important;
+    object-fit: contain;
+    display: block;
+}
+
+/* LIENS DE NAVIGATION : Plus grands et plus espacés */
+.nav-links {
+    display: flex;
+    gap: 4rem !important; /* Espacement large pour le côté Premium */
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff !important; /* Blanc pur pour la visibilité */
+    text-decoration: none;
+    font-size: 1.1rem !important; /* Augmenté pour PC */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    opacity: 1 !important;
+}
+
+.nav-links a:hover {
+    color: var(--accent) !important;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+/* BOUTON CTA : Plus imposant */
+.nav-cta {
+    background: var(--accent);
+    color: #000000 !important;
+    padding: 0.8rem 2rem !important; /* Plus large */
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem !important;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+/* --- RESPONSIVE : On réduit pour le téléphone --- */
+@media (max-width: 991px) {
+    nav {
+        padding: 0.8rem 0;
+    }
+    .logo {
+        font-size: 1.3rem !important;
+    }
+    .logo-img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    .nav-links {
+        gap: 1.5rem !important;
+    }
+    .nav-links a {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ... (Le reste de ton code HERO reste identique) ... */
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 10rem 2rem 6rem; /* Plus d'espace en haut pour ne pas coller à la nav */
+    position: relative;
+    overflow: hidden;
+    background-color: #000000; /* Fond noir derrière l'image */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('programmeur-professionnel-travaillant-tard-dans-l-obscurite-du-bureau.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* On baisse encore l'opacité pour que l'image soit subtile et sombre */
+    z-index: 0;
+}
+
+/* On force tout le texte du Hero en BLANC pour la lisibilité */
+.hero h1, 
+.hero .hero-description, 
+.hero .stat-value, 
+.hero .stat-label {
+    color: #ffffff !important;
+}
+
+.hero-container {
+    max-width: 100% !important;
+    width: 100%;
+    /* On passe de 20rem à 8rem en haut pour supprimer le vide inutile */
+    /* On passe de 12rem à 4rem en bas */
+    padding: 8rem 6% 11rem!important; 
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem; /* Espace réduit entre texte et graph */
+    align-items: center; 
+}
+.hero-content {
+	position: relative;
+	z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    
+    /* MODIFICATIONS ICI */
+    margin-top: 0;         /* On remet à zéro */
+    margin-bottom: 1.5rem; /* On réduit l'espace avec le titre pour tout remonter */
+}
+
+.hero-badge span {
+	color: var(--accent);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Un poil plus petit pour gagner de la place */
+    line-height: 1.1;
+    margin-bottom: 1.5rem !important; /* Moins d'espace sous le titre */
+}
+.hero h1 .highlight {
+	color: var(--accent);
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    margin-bottom: 2rem; /* Moins d'espace avant les boutons */
+}
+.hero-buttons {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 3rem;
+}
+
+.btn-primary {
+	background: var(--accent);
+	color: var(--bg-dark);
+	padding: 1rem 2rem;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	transition: all 0.2s;
+}
+
+.btn-primary:hover {
+	background: var(--accent-light);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+.btn-secondary {
+	background: transparent;
+	color: var(--text-primary);
+	padding: 1rem 2rem;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 600;
+	border: 1px solid var(--border);
+	transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+	border-color: var(--text-secondary);
+	background: var(--bg-card);
+}
+
+.hero-stats {
+	display: flex;
+	gap: 3rem;
+}
+
+.stat {
+	text-align: left;
+}
+
+.stat-value {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--text-primary);
+}
+
+.stat-label {
+	font-size: 0.85rem;
+	color: var(--text-muted);
+}
+
+:root {
+    --bg-dark: #ffffff;        /* Fond blanc pur */
+    --bg-card: #f8f9fa;        /* Gris très léger pour les cartes */
+    --bg-elevated: #ffffff;
+    --accent: #f59e0b;         /* Orange Dracode */
+    --accent-light: #fbbf24;
+    --text-primary: #000000;   /* Écritures noires */
+    --text-secondary: #4b5563; /* Gris foncé pour le texte secondaire */
+    --text-muted: #9ca3af;
+    --border: #e5e7eb;         /* Bordures fines et claires */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #000000 !important; /* Noir total pour faire ressortir le texte */
+    border-bottom: none; 
+    padding: 1rem 0;
+}
+
+/* On force le logo et les liens en blanc pur */
+.logo, .nav-links a {
+    color: #ffffff !important;
+    opacity: 1 !important; /* On retire toute transparence */
+}
+
+
+/* CONFIGURATION LARGE DU HERO */
+/* --- Mise en page globale du Hero --- */
+.hero-container {
+    display: flex;
+    flex-direction: row; /* Texte à gauche, Graph à droite sur PC */
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10rem 5% 5rem; /* Espace pour la nav noire fixe */
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.crypto-dashboard-area {
+    flex: 1.2;
+    z-index: 2;
+    background: #131722; /* Fond solide TradingView */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* --- Mise en page pour PORTABLE --- */
+@media (max-width: 991px) {
+    .hero-container {
+        flex-direction: column !important; /* Force l'empilement vertical */
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        order: 1 !important; /* FORCE LE TEXTE EN HAUT */
+        width: 100%;
+    }
+
+    .crypto-dashboard-area {
+        order: 2 !important; /* FORCE LE GRAPH EN BAS */
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Bouton secondaire sur fond blanc */
+.btn-secondary {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: #f9fafb;
+    border-color: #000000;
+}
+
+/* Badge Hero */
+.hero-badge {
+    background: #fcf9f9;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+/* --- Features Section (Resserrée et Transparente) --- */
+.features {
+    padding: 6rem 2rem;
+    position: relative;
+    background: #000000;
+    overflow: hidden;
+}
+
+/* Image de fond */
+.features::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('vue-3d-d-un-ordinateur-personnel-avec-de-la-vegetation.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; 
+    z-index: 0;
+}
+
+/* LE CONTENEUR : On passe de 1200px à 1000px pour resserrer */
+.section-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem; /* Espace réduit pour compacité */
+}
+
+/* GRILLE RESSERRÉE */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; /* Espace entre les cartes réduit pour l'effet compact */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* CARTES TRANSPARENTES (Style Glassmorphism conservé) */
+.feature-card {
+    /* Fond sombre transparent pour que les textes ressortent bien */
+    background: rgba(10, 10, 10, 0.5) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s;
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.feature-card:hover {
+    background: rgba(255, 255, 255, 0.1) !important; 
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+/* Icônes et Textes (Tes styles originaux) */
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: #1a1a1a !important;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    color: var(--accent);
+}
+
+/* --- Ajustement des Espacements (Features/Pricing) --- */
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #ffffff !important;
+    text-align: center;
+    
+    /* ESPACE ENTRE LE TITRE ET LE TEXTE SUIVANT */
+    margin-bottom: 2.5rem !important; 
+    
+    letter-spacing: -0.02em;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgb(248, 241, 241);
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+
+    /* ESPACE ENTRE LE TEXTE ET LES ONGLETS (OU LA GRILLE) */
+    margin-bottom: 4rem !important; 
+}
+
+/* On s'assure que le header global ne bloque pas l'espacement */
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+/* FORCE LE TEXTE EN BLANC DANS TOUTES LES CARTES */
+.feature-card h3, 
+.feature-card p, 
+.feature-card li,
+.instructor-card h3,
+.instructor-card .instructor-name,
+.instructor-card .instructor-bio,
+.instructor-card .instructor-role,
+.pricing-card h3,
+.pricing-card .pricing-name,
+.pricing-card .pricing-description,
+.pricing-card .pricing-features li {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3); /* Légère ombre pour booster la lisibilité sur fond transparent */
+}
+
+/* On s'assure que les icônes et les listes ne sont pas impactées par le noir */
+.feature-card *, .instructor-card *, .pricing-card * {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Espacement entre le titre et la description (comme demandé) */
+.section-title {
+    margin-bottom: 2.5rem !important;
+}
+
+.section-description {
+    margin-bottom: 4rem !important;
+    color: #ffffff !important;
+}
+/* Si tu as des onglets (billing-toggle) juste après */
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    
+    /* Espace entre les onglets et la grille de cartes en dessous */
+    margin: 0 auto 3rem auto; 
+    
+    background: var(--bg-card);
+    padding: 0.5rem;
+    border-radius: 12px;
+    width: fit-content;
+    border: 1px solid var(--border);
+}
+/* Mobile */
+@media (max-width: 900px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+/* Pricing Section - RÉTABLISSEMENT TOTAL DU STYLE */
+.pricing {
+    padding: 6rem 2rem;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('ECommerce-Fevad-2023-.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* RESSERREMENT DE LA GRILLE SEULEMENT */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px; /* Resserre les items pour qu'ils ne prennent pas toute la page */
+    margin: 0 auto;    /* Centre le bloc */
+}
+
+/* STYLE DES ONGLETS (BILLING TOGGLE) */
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    background: var(--bg-card);
+    padding: 0.5rem;
+    border-radius: 12px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--border);
+}
+
+.billing-option {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+}
+
+.billing-option.active {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* CARTES ET TITRES (ESSENTIEL, BUSINESS, PREMIUM) */
+.pricing-card {
+    /* On passe de 0.8 à 0.3 pour une vraie transparence */
+    background: rgba(255, 255, 255, 0.05) !important; 
+    
+    /* L'effet de flou qui permet de garder le texte lisible sur le fond */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* Bordure légère pour marquer la séparation */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    transition: all 0.3s;
+}
+
+/* On s'assure que le contenu reste bien blanc pour être visible sur la transparence */
+.pricing-name, 
+.pricing-price, 
+.pricing-features li, 
+.pricing-description {
+    color: #ffffff !important;
+}
+
+.pricing-price {
+    color: #ffffff !important;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.pricing-description {
+    color: #bbbbbb !important;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* LISTE DES FEATURES */
+.pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    color: #ffffff !important;
+    font-size: 0.95rem;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* BOUTONS ORIGINAUX */
+.pricing-btn {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.pricing-card .pricing-btn {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.pricing-card.featured .pricing-btn {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border: none;
+}
+
+.pricing-card.featured .pricing-btn:hover {
+    background: var(--accent-light);
+}
+
+/* BADGE POPULAR */
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--bg-dark);
+    padding: 0.3rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* --- Section Instructors (Packs Crypto) --- */
+.instructors {
+    padding: 4rem 2rem; 
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+    min-height: auto; 
+}
+
+.instructors::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('arriere-plan-de-la-carte-mere.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4; 
+    z-index: 0;
+}
+
+.instructors .section-container {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.instructors-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem; 
+    max-width: 850px; 
+    margin: 0 auto;
+}
+
+.instructor-card {
+    flex: 1 1 350px;
+    max-width: 380px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.5) !important; 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 2rem;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- CERCLE SLIDER (MODIFIÉ POUR LE DÉFILEMENT) --- */
+.circle-slider {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 4px solid #ffbe33;
+    overflow: hidden;
+    position: relative;
+}
+
+/* AJOUT ICI : C'est ce qui fait défiler tes 5 images */
+.slide-track {
+    display: flex;
+    width: 500%; /* 5 images = 500% */
+    animation: scroll 15s linear infinite;
+}
+
+.slide-track img {
+    width: 20%; /* 1 image sur 5 */
+    height: 160px;
+    object-fit: cover;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-80%); }
+}
+
+/* --- TEXTES ET TITRES (TES STYLES ORIGINAUX) --- */
+.instructor-name {
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.instructor-role { 
+    color: #ffbe33; 
+    font-size: 0.85rem;
+    font-weight: 600; 
+    margin-bottom: 0.8rem; 
+    text-transform: uppercase; 
+}
+
+.instructor-bio { 
+    color: #bbbbbb !important; 
+    font-size: 0.9rem !important; 
+    line-height: 1.4; 
+    margin-bottom: 15px; 
+}
+
+.instructors .section-title {
+    color: #ffffff !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 10px;
+}
+
+.instructors .section-description {
+    color: #cccccc !important;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+/* PRIX DEVENU BOUTON CLIQUABLE */
+.template-price {
+    display: inline-block; /* Pour qu'il se comporte comme un bouton */
+    font-size: 1.1rem !important;
+    font-weight: bold;
+    color: #000000 !important;
+    background: #ffbe33;
+    padding: 8px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.template-price:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+/* --- SOUDURE --- */
+.reassurance-section, .coinbase-section {
+    margin-top: -1px !important; /* Supprime l'éventuelle ligne noire entre sections */
+}
+
+@media (max-width: 768px) {
+    .instructors-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        max-width: 400px;
+    }
+}
+
+/* --- SECTION RÉASSURANCE (Les cartes transparentes qui brillent) --- */
+.reassurance-section {
+    background: transparent; /* On enlève le fond noir */
+    padding: 80px 2rem !important;
+}
+
+.reassurance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reassurance-card {
+    /* Fond sombre mais transparent avec flou (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px); 
+    
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    
+    /* EFFET NÉON (Glow) */
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.05);
+    transition: all 0.4s ease;
+}
+
+.reassurance-card:hover {
+    transform: translateY(-10px);
+    border-color: #f59e0b;
+    background: rgba(37, 36, 33, 0.05);
+    /* BRILLANCE AU SURVOL */
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.3);
+}
+
+.reassurance-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    /* L'icône brille aussi */
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
+}
+
+.reassurance-card h3 {
+    color: #2c2020;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+/* --- SECTION COINBASE (Correction Image et Espacement) --- */
+.coinbase-section {
+    position: relative;
+    /* On utilise l'image avec un voile sombre progressif */
+    background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.8) 100%), 
+                url('images/plante-au-neon-entouree-formes-geometriques-abstraites-creees-ia-generative_124507-171054.avif') no-repeat center center / cover !important;
+    
+    background-attachment: fixed; /* Effet parallaxe pro */
+}
+
+.reassurance-card {
+    background: rgba(255, 255, 255, 0.03); /* Très léger pour laisser voir le fond */
+    backdrop-filter: blur(8px); /* Flou derrière la carte */
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.05);
+    transition: all 0.4s ease;
+}
+
+.reassurance-card:hover {
+    transform: translateY(-10px);
+    border-color: #f59e0b;
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.3); /* Brillance intense au survol */
+}
+
+.reassurance-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
+}
+
+/* --- SECTION COINBASE (Soudée) --- */
+.coinbase-section {
+    background: transparent !important; /* On enlève le fond ici pour voir le wrapper */
+    padding: 20px 2rem 120px 2rem !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- RADAR DU BOUTON --- */
+.magic-button-wrapper {
+    position: relative;
+    margin: 40px 0;
+}
+
+.button-radar {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: #f59e0b;
+    border-radius: 50px;
+    animation: radar-wave 2.5s infinite;
+    z-index: 1;
+}
+
+@keyframes radar-wave {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+}
+
+.btn-primary {
+    position: relative;
+    z-index: 2;
+}
+/* --- EFFET RADAR SOUS LE BOUTON --- */
+.magic-button-wrapper {
+    position: relative;
+    margin: 30px 0;
+}
+
+.button-radar {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: #f59e0b;
+    border-radius: 50px;
+    z-index: 0;
+    animation: radar-wave 2s infinite;
+}
+
+@keyframes radar-wave {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+}
+
+.btn-primary {
+    position: relative;
+    z-index: 2;
+}
+
+/* CTA Section */
+.cta {
+	padding: 6rem 2rem;
+	background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.cta::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 600px;
+	background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+	pointer-events: none;
+}
+
+.cta-content {
+	position: relative;
+	z-index: 1;
+}
+
+.cta h2 {
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.cta p {
+	color: var(--text-secondary);
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Footer */
+footer {
+	padding: 4rem 2rem 2rem;
+	border-top: 1px solid var(--border);
+}
+
+.footer-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* --- Footer Global --- */
+footer {
+    padding: 6rem 2rem 2rem !important; /* Plus d'espace au-dessus pour décoller de Coinbase */
+    border-top: 1px solid var(--border);
+    background-color: #0d0d0d; /* Assure un fond sombre propre */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* On force la grille à 4 colonnes sur PC */
+.footer-grid {
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+/* --- Style du Logo dans le Footer --- */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* On cible l'image uniquement quand elle est DANS le footer */
+footer .logo-img {
+    width: 180px !important; 
+    height: auto !important;
+    object-fit: contain;
+    display: block !important;
+}
+
+/* On s'assure que le lien du logo en bas ne casse pas l'alignement */
+footer .footer-brand .logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.8rem !important; /* Taille du texte DRACODE en bas */
+}
+
+.footer-title {
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: var(--text-secondary);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 1.5rem;
+}
+
+.footer-links {
+	list-style: none;
+}
+
+.footer-links li {
+	margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+	color: var(--text-muted);
+	text-decoration: none;
+	font-size: 0.9rem;
+	transition: color 0.2s;
+}
+
+.footer-links a:hover {
+	color: var(--accent);
+}
+
+.footer-bottom {
+	padding-top: 2rem;
+	border-top: 1px solid var(--border);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.85rem;
+	color: var(--text-muted);
+}
+
+.footer-bottom a {
+	color: var(--accent);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.footer-bottom a:hover {
+	color: var(--accent-light);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+	display: none;
+	background: none;
+	border: none;
+	color: var(--text-primary);
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+	.hero-container {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.hero-content {
+		order: 1;
+	}
+
+	.guitar-wrapper {
+		order: 0;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.hero-description {
+		margin: 0 auto 2rem;
+	}
+
+	.hero-buttons {
+		justify-content: center;
+	}
+
+	.hero-stats {
+		justify-content: center;
+	}
+
+	.features-grid,
+	.pricing-grid,
+	.testimonials-grid {
+		grid-template-columns: 1fr;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.billing-toggle {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.billing-option {
+		padding: 0.6rem 1.2rem;
+		font-size: 0.85rem;
+	}
+
+	.instructors-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.footer-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 880px) {
+
+	.nav-links,
+	.nav-cta {
+		display: none;
+	}
+
+	.mobile-menu-btn {
+		display: block;
+	}
+
+	/* Mobile Menu */
+	.nav-links.active {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: rgba(13, 13, 13, 0.98);
+		backdrop-filter: blur(20px);
+		padding: 0.5rem 0 0 0;
+		gap: 0;
+	}
+
+	.nav-links.active li {
+		border-bottom: 1px solid var(--border);
+	}
+
+	.nav-links.active li:last-child {
+		border-bottom: none;
+	}
+
+	.nav-links.active a {
+		display: block;
+		padding: 1.35rem 2rem;
+		font-size: 1.1rem;
+	}
+
+	.nav-cta.active {
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		background: var(--bg-dark);
+		padding: 1.5rem 2rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.nav-cta.active span {
+		display: block;
+		background: var(--accent);
+		color: var(--bg-dark);
+		padding: 1rem;
+		border-radius: 8px;
+		font-weight: 600;
+	}
+
+	.hero {
+		padding: 6rem 1rem 3rem;
+	}
+
+	.hero h1 {
+		font-size: 2rem;
+	}
+
+	.hero-buttons {
+		flex-direction: column;
+	}
+
+	.hero-stats {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.stat {
+		text-align: center;
+	}
+
+	.guitar-card {
+		padding: 1rem;
+	}
+
+	.fretboard-grid {
+		grid-template-rows: repeat(6, 28px);
+	}
+
+	.string-labels {
+		height: calc(6 * 28px);
+		left: -24px;
+	}
+
+	.string-label {
+		height: 28px;
+		font-size: 0.6rem;
+	}
+
+	.note-marker {
+		width: 14px;
+		height: 14px;
+		font-size: 0.4rem;
+	}
+
+	.instructors-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-grid {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.footer-brand p {
+		margin: 1rem auto;
+	}
+
+	.footer-bottom {
+		flex-direction: column;
+		gap: 1rem;
+		text-align: center;
+	}
+}
+/* ============================================================
+   CORRECTEUR DESKTOP : ON GONFLE TOUT SUR ORDINATEUR
+   ============================================================ */
+@media (min-width: 1024px) {
+
+    /* --- SECTION HERO (TEXTE ET BOUTONS) --- */
+    .hero h1 {
+        font-size: 5rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .hero-description {
+        font-size: 1.5rem !important;
+        max-width: 600px;
+        line-height: 1.4;
+        margin-bottom: 3rem !important;
+    }
+
+    .hero-buttons {
+        gap: 2rem !important;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 1.2rem 2.8rem !important;
+        font-size: 1.2rem !important;
+        border-radius: 14px !important;
+    }
+
+    .hero-stats {
+        gap: 5rem !important;
+        margin-top: 2rem;
+    }
+
+    .stat-value {
+        font-size: 3rem !important;
+    }
+
+    .stat-label {
+        font-size: 1rem !important;
+        letter-spacing: 1px;
+    }
+
+    .hero-badge {
+        padding: 0.6rem 1.4rem !important;
+        font-size: 1rem !important;
+    }
+
+    .hero-container {
+        grid-template-columns: 1.2fr 1fr !important;
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+        gap: 6rem !important;
+    }
+
+    /* --- ALIGNEMENT DES FORMULAIRES (CENTREMENT VERTICAL) --- */
+    /* On cible la ligne 'row' qui contient tes deux formulaires */
+    /* --- ALIGNEMENT DES FORMULAIRES (MÉTHODE FORCE BRUTE) --- */
+    
+    /* On force le conteneur à se comporter comme un tableau pour l'alignement vertical */
+    .contact-form-container .row, 
+    #service-form .container > .row {
+        display: table !important; /* On change le mode d'affichage */
+        width: 100% !important;
+        border-spacing: 40px 0 !important; /* Crée l'espace (gap) entre les colonnes */
+    }
+
+    /* On force les deux colonnes à se comporter comme des cellules de tableau centrées */
+    .contact-form-container .col-lg-6,
+    #service-form .col-lg-6,
+    .form-column, 
+    .contact-form, 
+    .contact-info {
+        display: table-cell !important; /* Se comporte comme une cellule */
+        vertical-align: middle !important; /* CENTRE VERTICALEMENT LE CONTENU */
+        float: none !important; /* Annule les flottements qui bloquent l'alignement */
+        width: 50% !important;
+    }
+
+    /* Ajustement des boutons pour qu'ils soient identiques */
+    .form-column .btn-primary, 
+    .contact-form .btn-primary,
+    #service-form button,
+    .pricing-btn {
+        width: 100% !important;
+        display: block !important;
+    }
+/* --- Style CTA Dark Crypto --- */
+.cta-crypto {
+    background: #000000; /* Fond noir pur */
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.contact-form-container, 
+    #service-form .container > .row {
+        display: flex !important;
+        align-items: center !important; /* MAGIE : Centre le petit bloc au milieu du grand */
+        justify-content: center !important;
+        gap: 4rem !important;
+        flex-wrap: nowrap !important; /* Garde les deux colonnes côte à côte */
+    }
+
+    .form-column, .contact-form, .contact-info {
+        flex: 1 !important;
+        max-width: 500px !important;
+        margin: 0 !important; /* Supprime les marges qui pourraient décentrer */
+    }
+}
+/* Effet de lueur orange derrière le texte */
+.cta-crypto::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.crypto-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.cta-crypto h2 {
+    color: #ffffff !important;
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 1.5rem;
+}
+
+.cta-crypto p {
+    color: var(--text-secondary) !important;
+    font-size: 1.2rem !important;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+.cta-crypto p strong {
+    color: #ffffff;
+}
+
+/* Bouton Noir & Orange */
+.btn-crypto {
+    display: inline-block;
+    background: transparent;
+    color: #ffffff !important;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-crypto:hover {
+    background: var(--accent);
+    color: #000000 !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+}
+
+.trust-label {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981; /* Vert pour la confiance */
+    border-radius: 50%;
+    display: inline-block;
+}
+/* Espacement massif pour la section Coinbase */
+/* --- Section Coinbase avec Image de Fond --- */
+/* --- La Section (Pas de marges externes) --- */
+/* --- Force le Plein Écran (Full Width Breakout) --- */
+.coinbase-section-full {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+/* --- Image de fond : remplit chaque pixel --- */
+.bg-full-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Important : remplit sans déformer */
+    z-index: 1;
+}
+
+/* --- Overlay Noir : pour la lisibilité --- */
+.dark-overlay-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Ajuste la noirceur ici */
+    z-index: 2;
+}
+
+/* --- Contenu : par-dessus l'image --- */
+.coinbase-section {
+    margin: 0 !important;
+    padding: 120px 2rem !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* On force l'image de fond */
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                      url('images/172769-green-botanique-petale-plante_terrestre-vegetation-3840x2160.jpg') !important; 
+    
+   background-size: cover !important;
+    background-position: center !important;
+}
+/* 2. On force la section juste AVANT (Reviews) à coller */
+section:has(+ .coinbase-section), 
+.reviews-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* 3. On force le FOOTER juste APRÈS à coller */
+.coinbase-section + footer, 
+footer {
+    margin-top: 0 !important;
+    padding-top: 60px !important; /* On utilise padding pour l'espace intérieur */
+    border-top: none !important; /* On enlève d'éventuelles bordures */
+}
+
+/* 4. On nettoie le container global si présent */
+.section-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+/* On s'assure que le texte est bien blanc et lisible */
+.coinbase-section h2, 
+.coinbase-section p {
+    color: #ffffff !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* On s'assure que le contenu ne soit pas écrasé */
+.cta-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* --- Bonus Text Magnifique --- */
+.bonus-tag {
+    padding: 0.8rem 1.5rem;
+    border: 2px dashed var(--accent);
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 50px;
+    color: var(--accent);
+    font-weight: 700;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- Texte Bonus Pulsant --- */
+.bonus-text {
+    margin-top: 2rem !important;
+    padding: 1rem 2rem;
+    border: 2px dashed var(--accent);
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 50px;
+    color: var(--accent);
+    font-weight: 800;
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- Texte Bonus Pulsant --- */
+.bonus-text {
+    margin-top: 4rem !important; /* Bien décollé du bouton */
+    padding: 1rem 2rem;
+    border: 2px dashed var(--accent);
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 50px;
+    color: var(--accent);
+    font-weight: 800;
+    animation: pulse-border 2s infinite;
+    display: inline-block;
+}
+
+@keyframes pulse-border {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+/* On décolle le footer du bloc du dessus */
+footer {
+    margin-top: 100px !important;
+    padding: 8rem 2rem 3rem !important;
+    background-color: #0d0d0d; /* Optionnel : assure le fond sombre */
+}
+
+/* Réparation de la grille : remet "Contact" à droite */
+.footer-grid {
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr !important; /* Définit les 4 colonnes */
+    gap: 5rem !important; /* Espace entre Navigation, Expertise et Contact */
+    align-items: start;
+}
+
+/* Taille du logo UNIQUEMENT dans le footer */
+footer .logo-img {
+    width: 180px !important; 
+    height: auto !important;
+    display: block !important;
+    margin-bottom: 1.5rem;
+}
+
+/* Alignement du texte DRACODE en bas */
+footer .footer-brand .logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px;
+    font-size: 1.8rem !important;
+    font-weight: 800;
+    text-decoration: none;
+    color: #ffffff;
+}
+.particles-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Style du texte bonus (Magnifique) */
+.bonus-text {
+    margin-top: 2rem !important;
+    padding: 1rem 2rem;
+    border: 2px dashed var(--accent);
+    background: rgba(245, 158, 11, 0.05);
+    border-radius: 50px;
+    color: var(--accent);
+    font-weight: 800;
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+/* ============================================================
+   NETTOYAGE FINAL : ANTI-GLISSEMENT ET ALIGNEMENT MOBILE
+   ============================================================ */
+
+/* 1. Bloque définitivement le débordement horizontal sur mobile */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+/* 2. Aligne les formulaires sur PC (petit bloc au milieu du grand) */
+@media (min-width: 1024px) {
+    .main-wrapper { 
+        display: grid !important;
+        grid-template-columns: 1.1fr 0.9fr !important; 
+        align-items: center !important; /* MAGIE : Centre verticalement */
+        gap: 40px !important;
+    }
+}
+
+/* 3. Répare l'affichage sur Mobile (évite que ça dépasse à droite) */
+@media (max-width: 950px) {
+    .main-wrapper { 
+        display: flex !important;
+        flex-direction: column !important; /* Empile les blocs proprement */
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .checkout, .brief-section { 
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important; /* Inclut le padding dans la largeur */
+        margin-bottom: 20px !important;
+        padding: 20px !important;
+        border-radius: 15px !important; /* Un peu plus petit pour mobile */
+    }
+
+    /* Ajuste la grille du footer pour qu'elle ne dépasse pas */
+    .footer-grid {
+        grid-template-columns: 1fr !important; /* Une seule colonne sur mobile */
+        gap: 2rem !important;
+        text-align: center;
+    }
+
+    .footer-brand .logo {
+        justify-content: center;
+    }
+}
+
+/* 4. Fix pour les images ou vidéos qui pourraient forcer la largeur */
+img, video, canvas, iframe {
+    max-width: 100% !important;
+    height: auto !important;
+}
