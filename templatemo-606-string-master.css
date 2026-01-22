@@ -154,7 +154,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('programmeur-professionnel-travaillant-tard-dans-l-obscurite-du-bureau.jpg');
+    background-image: url('empty-dark-room-modern-futuristic-sci-fi-background-3d-illustration.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.3; /* On baisse encore l'opacité pour que l'image soit subtile et sombre */
@@ -201,27 +201,30 @@ nav {
     margin-bottom: 1.5rem; /* On réduit l'espace avec le titre pour tout remonter */
 }
 
-.hero-badge span {
-	color: var(--accent);
+/* --- AJUSTEMENTS POUR AÉRER LE TEXTE --- */
+
+.hero-badge {
+    /* ... tes propriétés existantes ... */
+    margin-bottom: 2rem !important; /* Plus d'espace sous le petit badge */
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Un poil plus petit pour gagner de la place */
-    line-height: 1.1;
-    margin-bottom: 1.5rem !important; /* Moins d'espace sous le titre */
-}
-.hero h1 .highlight {
-	color: var(--accent);
+    /* ... tes propriétés existantes ... */
+    margin-bottom: 2.5rem !important; /* On décolle le titre de la description */
+    letter-spacing: -1px; /* Pour un look plus pro si c'est grand */
 }
 
 .hero-description {
-    font-size: 1.15rem;
-    margin-bottom: 2rem; /* Moins d'espace avant les boutons */
+    /* ... tes propriétés existantes ... */
+    margin-bottom: 3rem !important; /* On décolle la description des boutons */
+    line-height: 1.6; /* Plus d'espace entre les lignes de texte */
+    max-width: 90%; /* Évite que le texte ne s'étale trop près du dashboard */
 }
+
 .hero-buttons {
-	display: flex;
-	gap: 1rem;
-	margin-bottom: 3rem;
+    display: flex;
+    gap: 1.5rem !important; /* Plus d'espace ENTRE les deux boutons */
+    margin-bottom: 4rem !important; /* Espace important avant les stats du bas */
 }
 
 .btn-primary {
@@ -405,7 +408,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('vue-3d-d-un-ordinateur-personnel-avec-de-la-vegetation.jpg');
+    background-image: url('ab\ viloet.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.4; 
@@ -555,7 +558,7 @@ nav {
 .pricing {
     padding: 6rem 2rem;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('ECommerce-Fevad-2023-.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('abstract-background-with-light-blue-sphere.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1748,59 +1751,76 @@ footer .footer-brand .logo {
     100% { transform: scale(1); opacity: 0.8; }
 }
 /* ============================================================
-   NETTOYAGE FINAL : ANTI-GLISSEMENT ET ALIGNEMENT MOBILE
+   FIX : PLUS DE COUPURE ET PLEINE LARGEUR (50/50)
    ============================================================ */
 
-/* 1. Bloque définitivement le débordement horizontal sur mobile */
-html, body {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    position: relative;
-}
-
-/* 2. Aligne les formulaires sur PC (petit bloc au milieu du grand) */
 @media (min-width: 1024px) {
-    .main-wrapper { 
-        display: grid !important;
-        grid-template-columns: 1.1fr 0.9fr !important; 
-        align-items: center !important; /* MAGIE : Centre verticalement */
-        gap: 40px !important;
+    /* 1. La section Hero doit pouvoir grandir (height: auto) */
+    .hero {
+        height: auto !important; 
+        min-height: 100vh !important; /* Minimum toute l'image, mais peut être plus */
+        display: block !important;
+        padding-top: 120px !important;
+        padding-bottom: 80px !important;
+        overflow: visible !important; /* Empêche de couper ce qui dépasse */
     }
-}
 
-/* 3. Répare l'affichage sur Mobile (évite que ça dépasse à droite) */
-@media (max-width: 950px) {
-    .main-wrapper { 
+    /* 2. Le conteneur s'étale sur toute la largeur */
+    .hero-container {
         display: flex !important;
-        flex-direction: column !important; /* Empile les blocs proprement */
+        flex-direction: row !important;
+        align-items: flex-start !important; /* Aligne en haut pour éviter les décalages */
+        justify-content: space-between !important;
+        max-width: 95% !important; /* Utilise presque tout l'écran */
         width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        gap: 40px;
     }
 
-    .checkout, .brief-section { 
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important; /* Inclut le padding dans la largeur */
-        margin-bottom: 20px !important;
-        padding: 20px !important;
-        border-radius: 15px !important; /* Un peu plus petit pour mobile */
+    /* 3. Le texte prend sa moitié */
+    .hero-content {
+        flex: 1 !important;
+        max-width: 48% !important;
+        text-align: left !important;
     }
 
-    /* Ajuste la grille du footer pour qu'elle ne dépasse pas */
-    .footer-grid {
-        grid-template-columns: 1fr !important; /* Une seule colonne sur mobile */
-        gap: 2rem !important;
-        text-align: center;
-    }
-
-    .footer-brand .logo {
-        justify-content: center;
-    }
+    #force-wide {
+    background: rgba(255, 255, 255, 0.03); /* Un très léger voile gris pour le détacher du noir pur */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Une bordure fine et discrète */
+    border-radius: 24px;
+    padding: 15px;
+    
+    /* EFFET DE LUMIÈRE (GLOW) : Ça donne un aspect moderne et pro */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 
+                0 0 20px rgba(245, 158, 11, 0.05); /* Rappel de ta couleur accent orange */
+    
+    backdrop-filter: blur(10px); /* Floute l'image de fond derrière le dashboard */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 4. Fix pour les images ou vidéos qui pourraient forcer la largeur */
-img, video, canvas, iframe {
-    max-width: 100% !important;
-    height: auto !important;
+/* Petit effet au survol : il s'illumine légèrement */
+#force-wide:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent); /* La bordure devient orange au survol */
+    box-shadow: 0 10px 40px rgba(245, 158, 11, 0.15);
+}
+
+#force-wide iframe {
+    border-radius: 15px; /* On arrondit aussi l'iframe à l'intérieur */
+    filter: contrast(1.1) brightness(1.1); /* On booste un peu la lumière de l'iframe */
+}
+
+/* 6. Fix Mobile (on empile pour ne pas couper sur les côtés) */
+@media (max-width: 1023px) {
+    .hero {
+        height: auto !important;
+        padding-top: 100px !important;
+    }
+    .hero-container {
+        flex-direction: column !important;
+    }
+    #force-wide {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
 }
