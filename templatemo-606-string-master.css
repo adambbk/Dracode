@@ -1825,47 +1825,45 @@ footer .footer-brand .logo {
     }
 }
 /* ============================================================
-   CORRECTION MOBILE - DRACODE (DÉ-ZOOM ET FOND)
+   FORÇAGE DU MODE BUREAU (DESKTOP) - ANNULE LE MOBILE
    ============================================================ */
 
-@media (max-width: 768px) {
-    /* 1. On empêche le zoom forcé sur l'image de fond */
-    body, .hero-area, .bg-box, .section {
-        background-attachment: scroll !important; /* Indispensable sur mobile */
-        background-size: cover !important;
-        background-position: center center !important;
-    }
+/* On force la largeur minimale du site pour qu'il ne se rétracte jamais */
+html, body {
+    min-width: 1200px !important; /* Ajuste à 1000px ou 1200px selon ton site */
+    overflow-x: auto !important;   /* Permet de scroller de gauche à droite sur tel */
+    width: 1200px !important;
+}
 
-    /* 2. On réduit la taille des titres pour qu'ils ne prennent pas tout l'écran */
-    h1 {
-        font-size: 1.8rem !important; 
-        line-height: 1.2 !important;
-    }
+/* On force les conteneurs à rester larges au lieu de s'empiler */
+.container {
+    width: 1200px !important;
+    max-width: none !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin: 0 auto !important;
+}
 
-    h2 {
-        font-size: 1.5rem !important;
-    }
+/* On empêche les colonnes (Bootstrap) de passer les unes sous les autres */
+.row {
+    display: flex !important;
+    flex-direction: row !important; /* Force la ligne */
+    flex-wrap: nowrap !important;   /* Empêche le retour à la ligne */
+}
 
-    /* 3. On réduit les marges énormes qui "étouffent" le contenu */
-    .layout_padding {
-        padding: 40px 0 !important;
-    }
+/* On redonne aux colonnes leur taille de PC (exemple pour 2 colonnes) */
+.col-md-6, .col-sm-12, .col-lg-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
 
-    /* 4. On s'assure que le contenu ne déborde pas (l'effet zoom vient souvent de là) */
-    .container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        width: 100% !important;
-        max-width: none !important;
-    }
+/* On redonne aux colonnes leur taille de PC (exemple pour 3 colonnes) */
+.col-md-4, [class*="col-"] {
+    /* Si tu as beaucoup de colonnes différentes, cette règle force le calcul PC */
+    min-width: auto !important;
+}
 
-    /* 5. Si tu as un bloc de texte central, on réduit son zoom */
-    .detail-box {
-        padding: 0 10px !important;
-    }
-    
-    .detail-box p {
-        font-size: 0.9rem !important;
-        margin-top: 10px !important;
-    }
+/* On empêche les textes de devenir géants ou de se centrer bizarrement */
+h1, h2, h3, p {
+    text-align: left !important; /* Ou 'center' selon ton design PC */
 }
