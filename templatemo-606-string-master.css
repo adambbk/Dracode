@@ -1824,3 +1824,48 @@ footer .footer-brand .logo {
         min-width: 100% !important;
     }
 }
+/* ============================================================
+   CORRECTION MOBILE - DRACODE (DÉ-ZOOM ET FOND)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. On empêche le zoom forcé sur l'image de fond */
+    body, .hero-area, .bg-box, .section {
+        background-attachment: scroll !important; /* Indispensable sur mobile */
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+
+    /* 2. On réduit la taille des titres pour qu'ils ne prennent pas tout l'écran */
+    h1 {
+        font-size: 1.8rem !important; 
+        line-height: 1.2 !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* 3. On réduit les marges énormes qui "étouffent" le contenu */
+    .layout_padding {
+        padding: 40px 0 !important;
+    }
+
+    /* 4. On s'assure que le contenu ne déborde pas (l'effet zoom vient souvent de là) */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* 5. Si tu as un bloc de texte central, on réduit son zoom */
+    .detail-box {
+        padding: 0 10px !important;
+    }
+    
+    .detail-box p {
+        font-size: 0.9rem !important;
+        margin-top: 10px !important;
+    }
+}
