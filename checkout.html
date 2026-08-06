@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Finalisez votre commande Dracode par carte bancaire ou cryptomonnaie.">
+  <title>Finaliser la commande | Dracode</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; font-family: "Space Grotesk", system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #07110d; color: #f4fff8; }
+    main { width: min(680px, 100%); background: #102019; border: 1px solid #2f6a4b; border-radius: 24px; padding: clamp(24px, 5vw, 48px); box-shadow: 0 24px 70px rgb(0 0 0 / 35%); }
+    a { color: #9fffc6; }
+    h1 { margin: 12px 0; font-size: clamp(2rem, 6vw, 3.4rem); }
+    p { line-height: 1.6; color: #c7ddcf; }
+    fieldset { border: 0; padding: 0; margin: 28px 0; }
+    legend { font-weight: 700; margin-bottom: 12px; }
+    .choices { display: grid; gap: 12px; }
+    label.choice { display: flex; gap: 12px; align-items: center; padding: 15px 16px; border: 1px solid #315d45; border-radius: 14px; cursor: pointer; }
+    label.choice:has(input:checked) { border-color: #72ffad; background: #173426; }
+    input[type="email"] { width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid #315d45; background: #08130e; color: inherit; font: inherit; }
+    button { width: 100%; border: 0; border-radius: 14px; padding: 16px; background: #72ffad; color: #05200f; font: inherit; font-weight: 800; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: wait; }
+    #checkout-status { min-height: 24px; margin-top: 14px; color: #ffd27d; }
+    .back { display: inline-block; text-decoration: none; }
+  </style>
+  <script src="templatemo-606-string-scripts.js" defer></script>
+</head>
+<body>
+  <main>
+    <a class="back" href="index.html#pricing">← Retour aux offres</a>
+    <h1>Finaliser la commande</h1>
+    <p>Sélectionnez votre formule et votre moyen de paiement. Vous serez redirigé vers la page sécurisée du prestataire choisi.</p>
+
+    <form id="checkout-form" novalidate>
+      <fieldset>
+        <legend>Formule</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="plan" value="Essentiel" checked> Essentiel — 165 €</label>
+          <label class="choice"><input type="radio" name="plan" value="Business"> Business — 325 €</label>
+          <label class="choice"><input type="radio" name="plan" value="Premium"> Premium — 520 €</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Moyen de paiement</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="payment" value="card" checked> Carte bancaire via Stripe</label>
+          <label class="choice"><input type="radio" name="payment" value="crypto"> Cryptomonnaie via Coinbase Commerce</label>
+        </div>
+      </fieldset>
+
+      <label for="email"><strong>Adresse e-mail</strong></label>
+      <input id="email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr">
+
+      <p><button type="submit">Continuer vers le paiement</button></p>
+      <p id="checkout-status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
