@@ -111,21 +111,6 @@ function setupPricing() {
   if (cards.length) selectPlan('Essentiel');
 }
 
-function setupSliders() {
-  const sliders = [...document.querySelectorAll('.slider-track')];
-  if (!sliders.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  window.setInterval(() => {
-    sliders.forEach((slider) => {
-      const atEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5;
-      slider.scrollTo({
-        left: atEnd ? 0 : slider.scrollLeft + slider.clientWidth,
-        behavior: 'smooth'
-      });
-    });
-  }, 5000);
-}
-
 function setupCheckout() {
   const form = document.getElementById('checkout-form');
   if (!form) return;
@@ -182,6 +167,5 @@ document.addEventListener('DOMContentLoaded', () => {
   repairMarkup();
   setupMobileMenu();
   setupPricing();
-  setupSliders();
   setupCheckout();
 });
