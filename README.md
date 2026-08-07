@@ -1,19 +1,41 @@
 # Dracode
 
-Site vitrine statique de création de sites web.
+Dracode est un projet de site vitrine destiné aux indépendants, commerces et petites entreprises qui souhaitent présenter leur activité et recevoir des demandes de contact en ligne.
 
-## Pages
+## Fonctionnalités
 
-- `index.html` : présentation et offres
-- `service.html` : services
-- `checkout.html` : choix de la formule et redirection vers le prestataire de paiement
+- page d'accueil responsive ;
+- présentation des services et des formules ;
+- parcours de commande avec sélection d'une offre ;
+- redirection vers Stripe ou Coinbase Commerce pour les paiements disponibles ;
+- formulaire de brief projet ;
+- intégration de contenus et visuels orientés web / crypto ;
+- navigation adaptée aux écrans mobiles.
 
-## Contrôles effectués
+## Technologies
 
-- JavaScript protégé contre les éléments HTML absents
-- menu mobile fonctionnel
-- sélection des offres fonctionnelle
-- liens de paiement associés aux trois formules
-- correction automatique de l'adresse e-mail, du logo de pied de page et de la balise viewport
+- HTML5
+- CSS3
+- JavaScript
+- Formspree
+- GitHub Pages
 
-Le site ne stocke aucune donnée bancaire : le paiement est traité par Stripe ou Coinbase Commerce.
+## Pages principales
+
+- `index.html` — accueil, services, tarifs et projets ;
+- `service.html` — détail des offres et formulaire de brief ;
+- `checkout.html` — sélection de la formule et du moyen de paiement.
+
+## Lancer le projet en local
+
+Le projet est statique. Il peut être ouvert directement dans un navigateur ou servi avec un serveur local, par exemple :
+
+```bash
+python -m http.server 8000
+```
+
+Puis ouvrir `http://localhost:8000`.
+
+## Auteur
+
+Adam Bouberka
